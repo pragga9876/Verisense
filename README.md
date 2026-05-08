@@ -1,10 +1,3 @@
-Here is a complete, professional `README.md` file for your VERISENSE project. You can copy-paste this directly into your GitHub repository.
-
-It is designed to be your **living documentation** — you can update it as you complete each phase.
-
----
-
-```markdown
 # 🔍 VERISENSE - AI-Powered Fake News Detection System
 
 ![Python Version](https://img.shields.io/badge/python-3.9+-blue.svg)
