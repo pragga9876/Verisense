@@ -2,6 +2,8 @@ from flask import Flask, request, jsonify, render_template
 import joblib
 import json
 from statistics import mean
+import os
+import sys
 
 app = Flask(__name__)
 
@@ -86,7 +88,7 @@ def predict():
         'color': 'green' if is_real else 'red'
     })
 
+# THIS IS THE IMPORTANT PART FOR RENDER
 if __name__ == '__main__':
-    import os
     port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port, debug=True)
+    app.run(host='0.0.0.0', port=port, debug=False)
