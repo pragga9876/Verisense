@@ -403,35 +403,3 @@ For questions or collaboration:
 If you found this project helpful, please give it a star on GitHub!
 
 ```
-
----
-
-## HOW TO USE THIS README
-
-1. **Copy the entire text above**
-2. **Create a file named `README.md`** in your project folder
-3. **Paste** the content
-4. **Replace placeholder text** (your name, email, GitHub username, etc.)
-5. **Add screenshots** where indicated (take screenshots of your working app)
-6. **Commit and push to GitHub**
-
----
-
-## IMAGES YOU NEED TO ADD
-
-Take these screenshots and save them in an `images/` folder:
-
-| Screenshot | Filename | What to show |
-|------------|----------|--------------|
-| Main interface | `home.png` | Your website's front page |
-| Real detection | `real_result.png` | Green badge + high score |
-| Fake detection | `fake_result.png` | Red badge + low score |
-| Jupyter notebook | `notebook.png` | Your feature engineering cells |
-| Model accuracy | `accuracy.png` | The 86.4% output |
-
-Then update the README image paths:
-```markdown
-![Home](images/home.png)
-```
-
----
