@@ -417,4 +417,3 @@ If you found this project helpful, please give it a star on GitHub!
 
 **Live Demo:** [https://verisense.onrender.com](https://verisense.onrender.com)
 *(First load may take 15-30 seconds due to free tier cold start)*
-```
