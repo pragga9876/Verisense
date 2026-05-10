@@ -1,8 +1,3 @@
-Here is your **complete, updated README.md** file. Copy and paste this directly into your GitHub repository.
-
----
-
-```markdown
 # 🔍 VERISENSE - AI-Powered Fake News Detection System
 
 ![Python Version](https://img.shields.io/badge/python-3.9+-blue.svg)
