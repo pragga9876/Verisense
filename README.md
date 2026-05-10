@@ -380,21 +380,13 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-## 🙏 Acknowledgments
-
-- Professor [Name] for guidance
-- College workshop on Machine Learning (Jupyter fundamentals)
-- Open-source community for datasets and libraries
-
----
-
 ## 📧 Contact
 
 For questions or collaboration:
 
-- **Email**: your.email@college.edu
-- **GitHub**: github.com/yourusername
-- **LinkedIn**: linkedin.com/in/yourprofile
+- **Email**: amipragga@gmail.com
+- **GitHub**: github.com/pragga9876
+- **LinkedIn**: linkedin.com/in/pragga-mukherjee
 
 ---
 
