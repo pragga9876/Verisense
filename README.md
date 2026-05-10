@@ -375,11 +375,11 @@ pip install -r requirements.txt
 
 | Name | Role | Responsibilities |
 |------|------|------------------|
-| Pragga Mukherjee | Lead Developer | ML model, Backend, Documentation, Deployment |
-| [Teammate 1] | Frontend Developer | UI/UX, CSS styling |
-| [Teammate 2] | Data Curator | Dataset preparation, Testing |
-| [Teammate 3] | Presenter | Slides, Demo, Q&A |
-| [Teammate 4] | Documentation | README, Video recording |
+| Priyanshu Bhowmick | Team Leader | README, Video recording |
+| Kundan Yadav | Frontend Developer | UI/UX, CSS styling |
+| Kinshuk Bose | Data Curator | Dataset preparation, Testing |
+| Mainak Mitra | Presenter | Slides, Demo, Q&A |
+| Pragga Mukherjee | Developer | ML model, Backend, Documentation, Deployment |
 
 ---
 
@@ -390,14 +390,6 @@ pip install -r requirements.txt
 - [Scikit-learn Documentation](https://scikit-learn.org/stable/)
 - [Flask Documentation](https://flask.palletsprojects.com/)
 - [Render Deployment Guide](https://render.com/docs/web-services)
-
----
-
-## 🙏 Acknowledgments
-
-- College ML workshop for Jupyter fundamentals
-- Open-source community for datasets and libraries
-- Scikit-learn team for accessible ML tools
 
 ---
 
@@ -426,29 +418,3 @@ If you found this project helpful, please give it a star on GitHub!
 **Live Demo:** [https://verisense.onrender.com](https://verisense.onrender.com)
 *(First load may take 15-30 seconds due to free tier cold start)*
 ```
-
----
-
-## WHAT CHANGED
-
-| Section | Update |
-|---------|--------|
-| Accuracy | Changed from 86.4% to 81.5% (your actual accuracy) |
-| Confusion matrix | Updated with your actual numbers (385, 126, 59, 430) |
-| Dataset size | Changed from 44,898 to 5,000 (what you actually used) |
-| Limitations | Added prominent caveat table |
-| Contact info | Filled with your email and GitHub |
-| Live demo link | Added with cold start warning |
-| Team table | Your name filled as Lead Developer |
-
----
-
-## TO DO BEFORE PRESENTATION
-
-1. **Add screenshots** — Replace the `[Insert screenshot...]` placeholders
-2. **Fill teammate names** — Add their names and roles
-3. **Push to GitHub** — `git add README.md && git commit -m "Update README with accurate metrics" && git push`
-
----
-
-**This README is now presentation-ready.** It's honest, detailed, and shows real work.
