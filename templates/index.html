@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VERISENSE - Truth Detector</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 16px;
+            font-family: inherit;
+            resize: vertical;
+            transition: border-color 0.3s;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .result {
+            margin-top: 30px;
+            padding: 25px;
+            border-radius: 16px;
+            text-align: center;
+            display: none;
+        }
+        
+        .result.show {
+            display: block;
+        }
+        
+        .verdict {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .score {
+            font-size: 48px;
+            font-weight: 800;
+            margin: 15px 0;
+        }
+        
+        .loading {
+            text-align: center;
+            margin-top: 20px;
+            display: none;
+            color: #667eea;
+            font-weight: 500;
+        }
+        
+        .loading.show {
+            display: block;
+        }
+        
+        .examples {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .examples p {
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .example-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .example-btn {
+            background: #f5f5f5;
+            color: #333;
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: normal;
+            width: auto;
+            margin-top: 0;
+            flex: 1;
+            min-width: 100px;
+        }
+        
+        .example-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: none;
+        }
+        
+        .accuracy-note {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 VERISENSE</h1>
+        <div class="tagline">AI-Powered Fake News Detection System</div>
+        
+        <textarea id="newsText" rows="6" placeholder="Paste a news article, headline, or any text here..."></textarea>
+        
+        <button onclick="checkNews()">Analyze Authenticity</button>
+        
+        <div class="loading" id="loading">
+            Analyzing with AI model... 🤖
+        </div>
+        
+        <div class="result" id="result">
+            <div class="verdict" id="verdict"></div>
+            <div class="score" id="score"></div>
+        </div>
+        
+        <div class="examples">
+            <p>📝 Try these examples:</p>
+            <div class="example-buttons">
+                <button class="example-btn" onclick="setExample('real')">✅ Real News</button>
+                <button class="example-btn" onclick="setExample('fake')">❌ Fake News</button>
+            </div>
+        </div>
+        <div class="accuracy-note">
+            Model accuracy: 81.5% | Trained on 44,898 articles
+        </div>
+    </div>
+    
+    <script>
+        async function checkNews() {
+            const text = document.getElementById('newsText').value;
+            if (!text.trim()) {
+                alert('Please paste some news text to analyze');
+                return;
+            }
+            
+            document.getElementById('loading').classList.add('show');
+            document.getElementById('result').classList.remove('show');
+            
+            try {
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ text: text })
+                });
+                
+                const data = await response.json();
+                
+                document.getElementById('loading').classList.remove('show');
+                
+                document.getElementById('verdict').innerHTML = data.verdict;
+                document.getElementById('verdict').style.color = data.color === 'green' ? '#27ae60' : '#e74c3c';
+                document.getElementById('score').innerHTML = `${data.authenticity_score}% Real`;
+                
+                document.getElementById('result').classList.add('show');
+                
+            } catch (error) {
+                document.getElementById('loading').classList.remove('show');
+                alert('Error analyzing news. Make sure the backend is running.');
+            }
+        }
+        
+        function setExample(type) {
+            const examples = {
+                real: "NASA successfully launched the James Webb Space Telescope on December 25, 2021. The telescope will study distant stars and galaxies as part of a mission expected to last 10 years. Scientists around the world have celebrated this achievement as a major step forward for astronomy.",
+                fake: "BREAKING!!! The government is putting microchips in COVID-19 vaccines to track citizens! This is 100% confirmed by a secret whistleblower source!!! All vaccinated people must refuse any further injections immediately!!! Share this before they delete it!"
+            };
+            document.getElementById('newsText').value = examples[type];
+        }
+    </script>
+</body>
+</html>
