@@ -380,21 +380,13 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-## 🙏 Acknowledgments
-
-- Professor [Name] for guidance
-- College workshop on Machine Learning (Jupyter fundamentals)
-- Open-source community for datasets and libraries
-
----
-
 ## 📧 Contact
 
 For questions or collaboration:
 
-- **Email**: your.email@college.edu
-- **GitHub**: github.com/yourusername
-- **LinkedIn**: linkedin.com/in/yourprofile
+- **Email**: amipragga@gmail.com
+- **GitHub**: github.com/pragga9876
+- **LinkedIn**: linkedin.com/in/pragga-mukherjee
 
 ---
 
@@ -403,35 +395,3 @@ For questions or collaboration:
 If you found this project helpful, please give it a star on GitHub!
 
 ```
-
----
-
-## HOW TO USE THIS README
-
-1. **Copy the entire text above**
-2. **Create a file named `README.md`** in your project folder
-3. **Paste** the content
-4. **Replace placeholder text** (your name, email, GitHub username, etc.)
-5. **Add screenshots** where indicated (take screenshots of your working app)
-6. **Commit and push to GitHub**
-
----
-
-## IMAGES YOU NEED TO ADD
-
-Take these screenshots and save them in an `images/` folder:
-
-| Screenshot | Filename | What to show |
-|------------|----------|--------------|
-| Main interface | `home.png` | Your website's front page |
-| Real detection | `real_result.png` | Green badge + high score |
-| Fake detection | `fake_result.png` | Red badge + low score |
-| Jupyter notebook | `notebook.png` | Your feature engineering cells |
-| Model accuracy | `accuracy.png` | The 86.4% output |
-
-Then update the README image paths:
-```markdown
-![Home](images/home.png)
-```
-
----
