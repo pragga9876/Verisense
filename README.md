@@ -1,5 +1,6 @@
 # 🔍 VERISENSE - AI-Powered Fake News Detection System
 
+
 ![Python Version](https://img.shields.io/badge/python-3.9+-blue.svg)
 ![Flask](https://img.shields.io/badge/flask-2.0+-green.svg)
 ![License](https://img.shields.io/badge/license-MIT-red.svg)
